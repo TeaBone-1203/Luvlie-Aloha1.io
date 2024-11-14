@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff99cc, #ffcc99);
+    color: #333;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: fadeIn 1s;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: #ff66b2;
+}
+
+.quiz {
+    display: flex;
+    flex-direction: column;
+}
+
+.question {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.question.active {
+    display: block;
+}
+
+button {
+    background-color: #ff6699;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin: 10px 0;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s ease-in-out;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #ff4c80;
+}
+
+button.correct {
+    background-color: #66cc66;
+    transform: scale(1.05);
+    animation: none;
+}
+
+button.wrong {
+    background-color: #ff6666;
+    animation: shake 0.5s ease-in-out;
+}
+
+.message {
+    margin-top: 20px;
+    color: #ff3366;
+    font-size: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.message.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.final-message {
+    font-size: 24px;
+    color: #ff3366;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
